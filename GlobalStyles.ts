@@ -1,0 +1,80 @@
+/* fonts */
+export const FontFamily = {
+  twinkleStarRegular: "Twinkle Star_regular",
+  milongaRegular: "Milonga_regular",
+  poppinsRegular: "Poppins_regular",
+  akayaTelivigalaRegular: "Akaya Telivigala_regular",
+  dancingScriptRegular: "Dancing Script_regular",
+};
+/* font sizes */
+export const FontSize = {
+  size_17xl: 36,
+  size_smi: 13,
+  size_xs: 12,
+  size_sm: 14,
+  size_9xl_2: 28,
+  size_9xl: 28,
+  size_11xl: 30,
+  size_base: 16,
+  size_mini: 15,
+  size_xl: 20,
+};
+/* Colors */
+export const Color = {
+  white: "#fff",
+  gray_400: "#070707",
+  gray_300: "rgba(0, 0, 0, 0.7)",
+  gray_200: "rgba(0, 0, 0, 0.45)",
+  gray_100: "rgba(0, 0, 0, 0.65)",
+  orange: "rgba(255, 153, 0, 0.8)",
+  black: "#000",
+  moccasin: "#ffebb8",
+  saddlebrown: "#763900",
+  saddlebrown_100: "rgba(89, 54, 0, 0.8)",
+  silver: "#c5c5c5",
+};
+/* Paddings */
+export const Padding = {
+  p_xs: 12,
+  p_11xl: 30,
+  p_12xs: 1,
+  p_10xs: 3,
+  p_9xs: 4,
+  p_5xs: 8,
+  p_mini: 15,
+  p_3xs: 10,
+  p_6xs: 7,
+  p_xl: 20,
+  p_7xl: 26,
+  p_61xl: 80,
+  p_sm: 14,
+  p_6xl: 25,
+  p_31xl: 50,
+  p_17xl: 36,
+  p_37xl: 56,
+  p_116xl: 135,
+  p_28xl: 47,
+  p_11xs: 2,
+  p_15xl: 34,
+  p_21xl: 40,
+  p_8xs: 5,
+  p_69xl: 88,
+  p_68xl_2: 87,
+  p_34xl_3: 53,
+  p_2xs_9: 11,
+  p_xs_8: 12,
+  p_mini_7: 15,
+  p_xs_3: 11,
+  p_3xs_4: 9,
+};
+/* border radiuses */
+export const Border = {
+  br_xl: 20,
+  br_3xs: 10,
+  br_31xl: 50,
+  br_6xl: 25,
+  br_25xl: 44,
+  br_3xl: 22,
+  br_11xl: 30,
+  br_mini: 15,
+};
