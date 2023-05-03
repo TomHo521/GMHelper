@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "locofytest",
-    "slug": "locofytest",
+    "name": "GMHelper",
+    "slug": "GMHelper",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

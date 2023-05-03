@@ -7,8 +7,6 @@ import BottomNavBarContainer from "../components/BottomNavBarContainer";
 import { Color, FontSize, FontFamily, Border, Padding } from "../GlobalStyles";
 import TopNavBar from "../components/TopNavBar";
 
-
-
 // const DATA = [{ id: "1" }];
 
 // const renderItem = () => {
