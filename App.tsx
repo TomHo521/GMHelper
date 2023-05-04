@@ -19,6 +19,7 @@ import AbilityCheckIcon from "./screens/AbilityCheckIcon";
 import HomeScreenIcon from "./screens/HomeScreenIcon";
 import WelcomePageIcon from "./screens/WelcomePageIcon";
 import LoginPageIcon from "./screens/LoginPageIcon";
+import { PlayerContextProvider} from "./contexts/PlayerContext";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { View, Text, Pressable, TouchableOpacity } from "react-native";
@@ -39,100 +40,102 @@ const App = () => {
 
   return (
     <>
-      <NavigationContainer>
-        {hideSplashScreen ? (
-          <Stack.Navigator
-            initialRouteName="LandingPage"
-            screenOptions={{ headerShown: false }}
-          >
-            <Stack.Screen
-              name="LandingPage"
-              component={LandingPageIcon}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="MyParty"
-              component={MyPartyIcon}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="CombatScreen"
-              component={CombatScreenIcon}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Transact"
-              component={TransactIcon}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="RollAttack"
-              component={RollAttackIcon}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="SavingThrow"
-              component={SavingThrowIcon}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="DiceRollScreen"
-              component={DiceRollScreen}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="UtilitiesScreen"
-              component={UtilitiesScreenIcon}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="CharacterProfile"
-              component={CharacterProfileIcon}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Messages"
-              component={MessagesIcon}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Guildboard"
-              component={GuildboardIcon}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="SettingsPage"
-              component={SettingsPageIcon}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Registration"
-              component={RegistrationIcon}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="AbilityCheck"
-              component={AbilityCheckIcon}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="HomeScreen"
-              component={HomeScreenIcon}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="WelcomePage"
-              component={WelcomePageIcon}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="LoginPage"
-              component={LoginPageIcon}
-              options={{ headerShown: false }}
-            />
-          </Stack.Navigator>
-        ) : null}
-      </NavigationContainer>
+      <PlayerContextProvider>
+        <NavigationContainer>
+          {hideSplashScreen ? (
+            <Stack.Navigator
+              initialRouteName="LandingPage"
+              screenOptions={{ headerShown: false }}
+            >
+              <Stack.Screen
+                name="LandingPage"
+                component={LandingPageIcon}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="MyParty"
+                component={MyPartyIcon}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="CombatScreen"
+                component={CombatScreenIcon}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="Transact"
+                component={TransactIcon}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="RollAttack"
+                component={RollAttackIcon}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="SavingThrow"
+                component={SavingThrowIcon}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="DiceRollScreen"
+                component={DiceRollScreen}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="UtilitiesScreen"
+                component={UtilitiesScreenIcon}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="CharacterProfile"
+                component={CharacterProfileIcon}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="Messages"
+                component={MessagesIcon}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="Guildboard"
+                component={GuildboardIcon}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="SettingsPage"
+                component={SettingsPageIcon}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="Registration"
+                component={RegistrationIcon}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="AbilityCheck"
+                component={AbilityCheckIcon}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="HomeScreen"
+                component={HomeScreenIcon}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="WelcomePage"
+                component={WelcomePageIcon}
+                options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="LoginPage"
+                component={LoginPageIcon}
+                options={{ headerShown: false }}
+              />
+            </Stack.Navigator>
+          ) : null}
+        </NavigationContainer>
+      </PlayerContextProvider>
     </>
   );
 };

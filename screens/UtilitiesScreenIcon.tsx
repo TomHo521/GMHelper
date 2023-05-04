@@ -10,7 +10,7 @@ import {
 import { useNavigation } from "@react-navigation/native";
 import HomeContainer from "../components/HomeContainer";
 import TopNavBar from "../components/TopNavBar";
-import SavingThrowContainer from "../components/SavingThrowContainer";
+import UtilityRowContainer from "../components/UtilityRowContainer";
 import BottomNavBarContainer from "../components/BottomNavBarContainer";
 import { Border, Color, FontFamily, FontSize, Padding } from "../GlobalStyles";
 
@@ -57,7 +57,7 @@ const UtilitiesScreenIcon = () => {
 `}</Text>
           </Pressable>
         </View>
-        <SavingThrowContainer
+        <UtilityRowContainer
           diceActionText={require("../assets/iconframe5.png")}
           diceActionImageUrl={`Roll Attack
 `}

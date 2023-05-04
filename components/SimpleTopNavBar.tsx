@@ -2,22 +2,22 @@ import * as React from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
 import { FontSize, FontFamily, Color, Padding, Border } from "../GlobalStyles";
 
-const TopNavBar1 = () => {
+const SimpleTopNavBar = () => {
   return (
     <View style={styles.topnavbar}>
-      <Image
+      {/* <Image
         style={styles.backframeIcon}
         resizeMode="cover"
         source={require("../assets/backframe1.png")}
-      />
+      /> */}
       <View style={styles.titleframe}>
         <Text style={styles.title}>Roll Attack</Text>
       </View>
-      <Image
+      {/* <Image
         style={styles.backframeIcon}
         resizeMode="cover"
         source={require("../assets/settingsframe1.png")}
-      />
+      /> */}
     </View>
   );
 };
@@ -55,4 +55,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default TopNavBar1;
+export default SimpleTopNavBar;

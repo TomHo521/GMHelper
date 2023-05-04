@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useContext } from "react";
 import { FlatList, StyleSheet, View, Text, ImageBackground } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import HomeContainer from "../components/HomeContainer";
@@ -6,6 +6,7 @@ import ContentFrameContainer from "../components/ContentFrameContainer";
 import BottomNavBarContainer from "../components/BottomNavBarContainer";
 import { Color, FontSize, FontFamily, Border, Padding } from "../GlobalStyles";
 import TopNavBar from "../components/TopNavBar";
+import { PlayerContext } from "../contexts/PlayerContext";
 
 // const DATA = [{ id: "1" }];
 
@@ -48,6 +49,7 @@ import TopNavBar from "../components/TopNavBar";
 
 const AbilityCheckIcon = () => {
   const navigation = useNavigation();
+  const { thisPlayer, setThisPlayer } = useContext(PlayerContext);
 
   const data = [
     { id: 1, imageSource: require("../assets/abilitycheck.png") },

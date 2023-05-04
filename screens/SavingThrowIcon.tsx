@@ -1,13 +1,15 @@
-import * as React from "react";
+import React, { useContext } from "react";
 import { ImageBackground, StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import TopNavBar from "../components/TopNavBar";
-import StrengthContainer from "../components/StrengthContainer";
+import SavingThrowContainer from "../components/SavingThrowContainer";
 import BottomNavBarContainer from "../components/BottomNavBarContainer";
 import { Padding } from "../GlobalStyles";
+import { PlayerContext } from "../contexts/PlayerContext";
 
 const SavingThrowIcon = () => {
   const navigation = useNavigation();
+  const { thisPlayer, setThisPlayer } = useContext(PlayerContext);
 
   return (
     <ImageBackground
@@ -16,7 +18,7 @@ const SavingThrowIcon = () => {
       source={require("../assets/savingthrow.png")}
     >
       <TopNavBar pageTitle="Saving Throw"/>
-      <StrengthContainer />
+      <SavingThrowContainer />
       <BottomNavBarContainer
         prop1={require("../assets/-icon-home2.png")}
         prop2={require("../assets/iconframe1.png")}

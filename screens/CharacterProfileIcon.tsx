@@ -1,13 +1,16 @@
 import * as React from "react";
+import { useContext } from "react";
 import { Text, StyleSheet, View, ImageBackground } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import HomeContainer from "../components/HomeContainer";
 import BottomNavBarContainer from "../components/BottomNavBarContainer";
 import { Color, FontFamily, FontSize, Padding } from "../GlobalStyles";
 import TopNavBar from "../components/TopNavBar";
+import { PlayerContext } from "../contexts/PlayerContext";
 
 const CharacterProfileIcon = () => {
   const navigation = useNavigation();
+  const { thisPlayer, setThisPlayer } = useContext(PlayerContext);
 
   return (
     <ImageBackground
@@ -26,11 +29,13 @@ const CharacterProfileIcon = () => {
           <Text style={[styles.mainStats, styles.mainStatsTypo]}>
             Main Stats
           </Text>
-          <Text style={[styles.hp4040Weapon, styles.mainStatsTypo]}>{`HP: 40/40
-Weapon:  Rapier
-Armor: Chain Mail
-STR:  15  DEX:  15   CON: 15
-INT:  15  CHA: 15   WIS: 15`}</Text>
+          <Text style={[styles.hp4040Weapon, styles.mainStatsTypo]}>{`${thisPlayer.name}  
+Level ${thisPlayer.level} ${thisPlayer.class}
+HP: ${thisPlayer.hp}
+Weapon: Rapier      Armor: Mail
+STR:15  DEX:15  CON:15 
+INT:15  CHA:15  WIS:15`}
+          </Text>
         </View>
         <View style={[styles.secondarystats, styles.mainstatsBorder]}>
           <Text style={[styles.mainStats, styles.mainStatsTypo]}>
