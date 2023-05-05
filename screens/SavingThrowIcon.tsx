@@ -4,7 +4,6 @@ import { useNavigation } from "@react-navigation/native";
 import TopNavBar from "../components/TopNavBar";
 import SavingThrowContainer from "../components/SavingThrowContainer";
 import BottomNavBarContainer from "../components/BottomNavBarContainer";
-import { Padding } from "../GlobalStyles";
 import { PlayerContext } from "../contexts/PlayerContext";
 
 const SavingThrowIcon = () => {

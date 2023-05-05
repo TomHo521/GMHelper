@@ -4,7 +4,7 @@ import {
   StyleSheet,
   View,
   Text,
-  Pressable,
+  TouchableOpacity,
   ImageSourcePropType,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
@@ -100,7 +100,7 @@ const BottomNavBarContainer = ({
       locations={[0, 1]}
       colors={["rgba(255, 255, 255, 0.25)", "rgba(255, 255, 255, 0)"]}
     >
-      <Pressable
+      <TouchableOpacity
         style={[styles.homebutton, styles.iconframeFlexBox, homeButtonStyle]}
         onPress={onHomeButtonPress}
       >
@@ -110,8 +110,8 @@ const BottomNavBarContainer = ({
         <Text style={[styles.buttonlabel, styles.buttonlabelFlexBox]}>
           Home
         </Text>
-      </Pressable>
-      <Pressable
+      </TouchableOpacity>
+      <TouchableOpacity
         style={[styles.dicebutton, styles.iconframeFlexBox, diceButtonStyle]}
         onPress={onDiceButtonPress}
       >
@@ -123,8 +123,8 @@ const BottomNavBarContainer = ({
         <Text style={[styles.buttonlabel, styles.buttonlabelFlexBox]}>
           Roll Dice
         </Text>
-      </Pressable>
-      <Pressable
+      </TouchableOpacity>
+      <TouchableOpacity
         style={[styles.dicebutton, styles.iconframeFlexBox, profiieButtonStyle]}
         onPress={onProfiieButtonPress}
       >
@@ -138,8 +138,8 @@ const BottomNavBarContainer = ({
         <Text style={[styles.buttonlabel, styles.buttonlabelFlexBox]}>
           My Profile
         </Text>
-      </Pressable>
-      <Pressable
+      </TouchableOpacity>
+      <TouchableOpacity
         style={[
           styles.dicebutton,
           styles.iconframeFlexBox,
@@ -157,7 +157,7 @@ const BottomNavBarContainer = ({
         <Text style={[styles.buttonlabel3, styles.buttonlabelFlexBox]}>
           Messages
         </Text>
-      </Pressable>
+      </TouchableOpacity>
     </LinearGradient>
   );
 };

@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Text, StyleSheet, View, TouchableOpacity } from "react-native";
 import { Color, FontFamily, Padding, FontSize, Border } from "../GlobalStyles";
+import { PlayerContext } from "../contexts/PlayerContext";
 
 type StatButtonProps = {
   name: string;
@@ -9,8 +10,8 @@ type StatButtonProps = {
 }
 
 const StatButton = ({name, active, onPress}: StatButtonProps ) => {
-  const buttonStyle = !active ? styles.activeButton : styles.inactiveButton;
-  const labelStyle = !active ? styles.activeLabel : styles.inactiveLabel;
+  const buttonStyle = active ? styles.activeButton : styles.inactiveButton;
+  const labelStyle = active ? styles.activeLabel : styles.inactiveLabel;
 
   return (
     // <TouchableOpacity style={[styles.dexterity, styles.strengthBorder]}>
@@ -27,11 +28,18 @@ const StatButton = ({name, active, onPress}: StatButtonProps ) => {
 const SavingThrowContainer = () => {
 
   const [activeStat, setActiveStat] = useState('strength');
+  const [savingThrow, setSavingThrow] = useState('');
+  const { thisPlayer, setThisPlayer } = useContext(PlayerContext);
 
   const toggleActiveStat = (stat: string) => {
     setActiveStat(stat);
     console.log(activeStat);
   };
+
+  const updateSavingThrow = () => {
+    let roll = Math.floor(Math.random() * 20) + 1;
+    setSavingThrow(`${activeStat} roll: ${roll}`);
+  }
 
 
   return (
@@ -45,10 +53,14 @@ const SavingThrowContainer = () => {
         <StatButton name="Dexterity" active={activeStat === 'dexterity'} onPress={() => toggleActiveStat('dexterity')} />
         <StatButton name="Wisdom" active={activeStat === 'wisdom'} onPress={() => toggleActiveStat('wisdom')} />
       </View>
-      <View style={[styles.output, styles.outputLayout]} />
-      <View style={[styles.button, styles.outputLayout]}>
-        <Text style={[styles.label, styles.labelTypo]}>Saving Throw</Text>
+      
+      <View style={[styles.output, styles.outputLayout]}>
+        <Text style={[styles.label, styles.labelTypo]}>{savingThrow}</Text>
       </View>
+      
+      <TouchableOpacity onPress={()=> {updateSavingThrow()}} style={[styles.button, styles.outputLayout]}>
+        <Text style={[styles.label, styles.labelTypo]}>Saving Throw</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -136,28 +148,26 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 
-  // button: {
-  //   padding: 10,
-  //   margin: 5,
-  //   borderRadius: 10,
-  //   backgroundColor: 'white',
-  //   borderWidth: 2,
-  //   borderColor: 'black',
-  //   minWidth: 100,
-  //   justifyContent: 'center',
-  //   alignItems: 'center',
-  // },
+
   label: {
     fontSize: 26,
     fontFamily: FontFamily.twinkleStarRegular,
   },
   activeButton: {
-    backgroundColor: 'black',
+    // backgroundColor: 'black',
+    // borderColor: 'white',
+
+    backgroundColor: Color.saddlebrown,
     borderColor: 'white',
+    //borderWidth: 1,
+    //borderWidth: StyleSheet.hairlineWidth,
   },
   inactiveButton: {
-    backgroundColor: 'white',
-    borderColor: 'black',
+    //backgroundColor: Color.saddlebrown,
+    // backgroundColor: Color.moccasin,
+    // borderColor: 'white',
+    backgroundColor: Color.moccasin,
+    borderColor: Color.saddlebrown,
   },
   activeLabel: {
     color: 'white',
@@ -166,5 +176,6 @@ const styles = StyleSheet.create({
     color: 'black',
   },
 });
+
 
 export default SavingThrowContainer;

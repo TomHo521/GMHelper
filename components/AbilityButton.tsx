@@ -1,16 +1,23 @@
 import * as React from "react";
-import { Text, StyleSheet, View } from "react-native";
+import { Text, StyleSheet, View, TouchableOpacity } from "react-native";
 import { Padding, Border, Color, FontFamily, FontSize } from "../GlobalStyles";
 
 interface AbilityButtonLabel {
   label: string;
+  active: boolean;
+  onPress: (label:string) => void;
 }
 
-const AbilityButton = ({label}: AbilityButtonLabel) => (
-  <View style={[styles.athletics, styles.athleticsFlexBox]}>
-    <Text style={styles.abilityLabel}>{label}</Text>
-  </View>
-);
+const AbilityButton = ({label, active, onPress}: AbilityButtonLabel) => {
+
+  const buttonStyle = active ? styles.activeButton : styles.inactiveButton;
+  const labelStyle = active ? styles.activeLabel : styles.inactiveLabel;
+
+  return (
+  <TouchableOpacity onPress={()=> onPress(label)} style={[styles.athletics, styles.athleticsFlexBox, buttonStyle]}>
+    <Text style={[styles.abilityLabel, labelStyle]}>{label}</Text>
+  </TouchableOpacity>
+)};
 
 
 const styles = StyleSheet.create({
@@ -19,6 +26,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     flexDirection: "row",
     overflow: "hidden",
+    alignItems: "center",
   },
 
 
@@ -36,9 +44,10 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontFamily: FontFamily.twinkleStarRegular,
     fontSize: FontSize.size_xl,
-    justifyContent: "center",
-    alignSelf: "stretch",
-    alignItems: "center",
+    // lineHeight: 30,
+    // justifyContent: "center",
+    // alignSelf: "stretch",
+    // alignItems: "center",
   },
   athletics: {
     borderRadius: Border.br_11xl,
@@ -49,8 +58,26 @@ const styles = StyleSheet.create({
     height: 30,
     marginTop: 3,
     alignItems: "center",
+    justifyContent: "center",
     borderStyle: "solid",
     flexDirection: "row",
+  },
+
+  activeButton: {
+    //backgroundColor: 'brown',
+    backgroundColor: Color.saddlebrown,
+    borderColor: 'white',
+  },
+  inactiveButton: {
+    //backgroundColor: Color.saddlebrown,
+    backgroundColor: Color.moccasin,
+    borderColor: Color.saddlebrown,
+  },
+  activeLabel: {
+    color: 'white',
+  },
+  inactiveLabel: {
+    color: 'black',
   },
 
 });
