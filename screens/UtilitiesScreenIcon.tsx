@@ -4,14 +4,13 @@ import {
   StyleSheet,
   Text,
   View,
-  Pressable,
+  TouchableOpacity,
   ImageBackground,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import HomeContainer from "../components/HomeContainer";
 import TopNavBar from "../components/TopNavBar";
 import UtilityRowContainer from "../components/UtilityRowContainer";
-import BottomNavBarContainer from "../components/BottomNavBarContainer";
+import BottomNavBar from "../components/BottomNavBar";
 import { Border, Color, FontFamily, FontSize, Padding } from "../GlobalStyles";
 
 const UtilitiesScreenIcon = () => {
@@ -23,16 +22,12 @@ const UtilitiesScreenIcon = () => {
       resizeMode="cover"
       source={require("../assets/utilitiesscreen.png")}
     >
-      {/* <HomeContainer
-        backFrame={require("../assets/backframe.png")}
-        pageTitle="Utilities"
-        settingsFrame={require("../assets/settingsframe.png")}
-      /> */}
+  
       <TopNavBar pageTitle="Utilities"/>
 
       <View style={styles.contentframe}>
         <View style={styles.rowcontainer}>
-          <Pressable
+          <TouchableOpacity
             style={styles.utilitybuttonLayout}
             onPress={() => navigation.navigate("SavingThrow")}
           >
@@ -43,8 +38,8 @@ const UtilitiesScreenIcon = () => {
             />
             <Text style={styles.buttonulabelTypo}>{`Saving Throw
 `}</Text>
-          </Pressable>
-          <Pressable
+          </TouchableOpacity>
+          <TouchableOpacity
             style={[styles.utilitybutton1, styles.utilitybuttonLayout]}
             onPress={() => navigation.navigate("DiceRollScreen")}
           >
@@ -55,7 +50,7 @@ const UtilitiesScreenIcon = () => {
             />
             <Text style={styles.buttonulabelTypo}>{`Roll Dice
 `}</Text>
-          </Pressable>
+          </TouchableOpacity>
         </View>
         <UtilityRowContainer
           diceActionText={require("../assets/iconframe5.png")}
@@ -66,14 +61,14 @@ const UtilitiesScreenIcon = () => {
 `}
         />
       </View>
-      <BottomNavBarContainer
+      <BottomNavBar
         prop1={require("../assets/-icon-home.png")}
-        prop2={require("../assets/iconframe6.png")}
-        prop3={require("../assets/iconsaccount-circle-filled-24px5.png")}
+        prop2={require("../assets/iconframe.png")}
+        prop3={require("../assets/iconsaccount-circle-filled-24px.png")}
         prop4={require("../assets/iconsmail-outline.png")}
         onHomeButtonPress={() => navigation.navigate("HomeScreen")}
         onDiceButtonPress={() => navigation.navigate("DiceRollScreen")}
-        onProfiieButtonPress={() => navigation.navigate("CharacterProfile")}
+        onProfileButtonPress={() => navigation.navigate("CharacterProfile")}
         onMessagesButtonPress={() => navigation.navigate("Messages")}
       />
     </ImageBackground>

@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Image, StyleSheet, Text, View, ImageBackground } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import BottomNavBarContainer from "../components/BottomNavBarContainer";
+import BottomNavBar from "../components/BottomNavBar";
 import { FontSize, FontFamily, Color, Padding, Border } from "../GlobalStyles";
 import TopNavBar from "../components/TopNavBar";
 
@@ -15,16 +15,16 @@ const MessagesIcon = () => {
       source={require("../assets/messages.png")}
     >
       <TopNavBar pageTitle="messages"/>
-      <BottomNavBarContainer
-        prop1={require("../assets/-icon-home1.png")}
-        prop2={require("../assets/iconframe6.png")}
-        prop3={require("../assets/iconsaccount-circle-filled-24px6.png")}
+      <BottomNavBar
+        prop1={require("../assets/-icon-home.png")}
+        prop2={require("../assets/iconframe.png")}
+        prop3={require("../assets/iconsaccount-circle-filled-24px.png")}
         prop4={require("../assets/iconsmail-outline.png")}
         propAlignSelf="unset"
         propWidth={360}
         onHomeButtonPress={() => navigation.navigate("HomeScreen")}
         onDiceButtonPress={() => navigation.navigate("DiceRollScreen")}
-        onProfiieButtonPress={() => navigation.navigate("CharacterProfile")}
+        onProfileButtonPress={() => navigation.navigate("CharacterProfile")}
         onMessagesButtonPress={() => navigation.navigate("Messages")}
       />
     </ImageBackground>

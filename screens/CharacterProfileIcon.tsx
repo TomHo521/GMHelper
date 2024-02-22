@@ -2,8 +2,7 @@ import * as React from "react";
 import { useContext } from "react";
 import { Text, StyleSheet, View, ImageBackground } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import HomeContainer from "../components/HomeContainer";
-import BottomNavBarContainer from "../components/BottomNavBarContainer";
+import BottomNavBar from "../components/BottomNavBar";
 import { Color, FontFamily, FontSize, Padding } from "../GlobalStyles";
 import TopNavBar from "../components/TopNavBar";
 import { PlayerContext } from "../contexts/PlayerContext";
@@ -19,11 +18,7 @@ const CharacterProfileIcon = () => {
       source={require("../assets/characterprofile.png")}
     >
       <TopNavBar pageTitle="My Profile"/>
-      {/* <HomeContainer
-        backFrame={require("../assets/backframe.png")}
-        pageTitle="My Profile"
-        settingsFrame={require("../assets/settingsframe.png")}
-      /> */}
+     
       <View style={styles.contentframe}>
         <View style={styles.mainstatsBorder}>
           <Text style={[styles.mainStats, styles.mainStatsTypo]}>
@@ -52,14 +47,14 @@ Exp to Next Level:
 `}</Text>
         </View>
       </View>
-      <BottomNavBarContainer
-        prop1={require("../assets/-icon-home1.png")}
-        prop2={require("../assets/iconframe6.png")}
-        prop3={require("../assets/iconsaccount-circle-filled-24px4.png")}
+      <BottomNavBar
+        prop1={require("../assets/-icon-home.png")}
+        prop2={require("../assets/iconframe.png")}
+        prop3={require("../assets/iconsaccount-circle-filled-24px.png")}
         prop4={require("../assets/iconsmail-outline.png")}
         onHomeButtonPress={() => navigation.navigate("HomeScreen")}
         onDiceButtonPress={() => navigation.navigate("DiceRollScreen")}
-        onProfiieButtonPress={() => navigation.navigate("CharacterProfile")}
+        onProfileButtonPress={() => navigation.navigate("CharacterProfile")}
         onMessagesButtonPress={() => navigation.navigate("Messages")}
       />
     </ImageBackground>

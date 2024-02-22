@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Text, StyleSheet, View, Pressable } from "react-native";
+import { Text, StyleSheet, View, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Color, FontFamily, Padding } from "../GlobalStyles";
 
@@ -8,42 +8,42 @@ const ContentContainer = () => {
 
   return (
     <View style={styles.contentframe}>
-      <Pressable
+      <TouchableOpacity
         style={styles.myProfileBorder}
         onPress={() => navigation.navigate("UtilitiesScreen")}
       >
         <Text style={styles.utilities}>Utilities</Text>
-      </Pressable>
-      <Pressable
+      </TouchableOpacity>
+      <TouchableOpacity
         style={[styles.myProfile, styles.myProfileBorder]}
         onPress={() => navigation.navigate("CharacterProfile")}
       >
         <Text style={styles.utilities}>My Profile</Text>
-      </Pressable>
-      <Pressable
+      </TouchableOpacity>
+      <TouchableOpacity
         style={[styles.myProfile, styles.myProfileBorder]}
         onPress={() => navigation.navigate("MyParty")}
       >
         <Text style={styles.utilities}>My Party</Text>
-      </Pressable>
-      <Pressable
+      </TouchableOpacity>
+      <TouchableOpacity
         style={[styles.myProfile, styles.myProfileBorder]}
         onPress={() => navigation.navigate("CombatScreen")}
       >
         <Text style={styles.utilities}>Combat</Text>
-      </Pressable>
-      <Pressable
+      </TouchableOpacity>
+      <TouchableOpacity
         style={[styles.myProfile, styles.myProfileBorder]}
         onPress={() => navigation.navigate("Guildboard")}
       >
         <Text style={styles.utilities}>Guildboard</Text>
-      </Pressable>
-      <Pressable
+      </TouchableOpacity>
+      <TouchableOpacity
         style={[styles.myProfile, styles.myProfileBorder]}
         onPress={() => navigation.navigate("Transact")}
       >
         <Text style={styles.utilities}>Transact</Text>
-      </Pressable>
+      </TouchableOpacity>
     </View>
   );
 };

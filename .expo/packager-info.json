@@ -1,9 +1,9 @@
 {
-  "expoServerPort": null,
-  "packagerPort": 19009,
+  "expoServerPort": 19010,
+  "packagerPort": 19010,
   "expoServerNgrokUrl": "https://xt-vkm.anonymous.test12.exp.direct",
   "packagerNgrokUrl": "https://xt-vkm.anonymous.test12.exp.direct",
-  "ngrokPid": 87739,
+  "ngrokPid": 39089,
   "packagerPid": null,
   "webpackServerPort": null
 }

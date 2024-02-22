@@ -1,10 +1,9 @@
 import * as React from "react";
 import { ImageBackground, StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import HomeContainer from "../components/HomeContainer";
 import ContentContainer from "../components/ContentContainer";
-import BottomNavBarContainer from "../components/BottomNavBarContainer";
-import { Padding } from "../GlobalStyles";
+import BottomNavBar from "../components/BottomNavBar";
+
 import TopNavBar from "../components/TopNavBar";
 
 const HomeScreenIcon = () => {
@@ -17,20 +16,16 @@ const HomeScreenIcon = () => {
       source={require("../assets/homescreen.png")}
     >
       <TopNavBar pageTitle="Home"/>
-      {/* <HomeContainer
-        backFrame={require("../assets/backframe.png")}
-        pageTitle="Home"
-        settingsFrame={require("../assets/settingsframe2.png")}
-      /> */}
+   
       <ContentContainer />
-      <BottomNavBarContainer
-        prop1={require("../assets/-icon-home1.png")}
-        prop2={require("../assets/iconframe6.png")}
-        prop3={require("../assets/iconsaccount-circle-filled-24px5.png")}
+      <BottomNavBar
+        prop1={require("../assets/-icon-home.png")}
+        prop2={require("../assets/iconframe.png")}
+        prop3={require("../assets/iconsaccount-circle-filled-24px.png")}
         prop4={require("../assets/iconsmail-outline.png")}
         onHomeButtonPress={() => navigation.navigate("HomeScreen")}
         onDiceButtonPress={() => navigation.navigate("DiceRollScreen")}
-        onProfiieButtonPress={() => navigation.navigate("CharacterProfile")}
+        onProfileButtonPress={() => navigation.navigate("CharacterProfile")}
         onMessagesButtonPress={() => navigation.navigate("Messages")}
       />
     </ImageBackground>

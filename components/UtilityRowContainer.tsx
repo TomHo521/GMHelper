@@ -4,7 +4,7 @@ import {
   StyleSheet,
   Text,
   View,
-  Pressable,
+  TouchableOpacity,
   ImageSourcePropType,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
@@ -52,7 +52,7 @@ const UtilityRowContainer = ({
 
   return (
     <View style={[styles.rowcontainer, rowContainerStyle]}>
-      <Pressable
+      <TouchableOpacity
         style={styles.utilitybuttonLayout}
         onPress={() => navigation.navigate("AbilityCheck")}
       >
@@ -62,8 +62,8 @@ const UtilityRowContainer = ({
           source={attackActionText}
         />
         <Text style={styles.buttonulabelTypo}>{savingThrowActionText}</Text>
-      </Pressable>
-      <Pressable
+      </TouchableOpacity>
+      <TouchableOpacity
         style={[styles.utilitybutton1, styles.utilitybuttonLayout]}
         onPress={() => navigation.navigate("RollAttack")}
       >
@@ -75,7 +75,7 @@ const UtilityRowContainer = ({
         <Text style={[styles.buttonulabelTypo, buttonULabelStyle]}>
           {diceActionImageUrl}
         </Text>
-      </Pressable>
+      </TouchableOpacity>
     </View>
   );
 };

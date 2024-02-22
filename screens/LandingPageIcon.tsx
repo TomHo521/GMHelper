@@ -3,7 +3,7 @@ import {
   Text,
   StyleSheet,
   View,
-  Pressable,
+  TouchableOpacity,
   ImageBackground,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
@@ -21,12 +21,12 @@ const LandingPageIcon = () => {
       <View style={[styles.herotextframe, styles.loginbuttonLayout]}>
         <Text style={styles.theWorldAwaits}>The World Awaits</Text>
       </View>
-      <Pressable
+      <TouchableOpacity
         style={[styles.loginbutton, styles.loginbuttonLayout]}
         onPress={() => navigation.navigate("LoginPage")}
       >
         <Text style={styles.theWorldAwaits}>Login</Text>
-      </Pressable>
+      </TouchableOpacity>
     </ImageBackground>
   );
 };

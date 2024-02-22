@@ -1,10 +1,10 @@
-import React, { useMemo } from "react";
-import { Text, StyleSheet, View } from "react-native";
+import React, { useMemo, useState } from "react";
+import { Text, TextInput, StyleSheet, View } from "react-native";
 import { FontFamily, FontSize, Color } from "../GlobalStyles";
 
 type NameFrameContainerType = {
-  nameText?: string;
-  emailText?: string;
+  inputText?: string;
+  labelText?: string;
 
   /** Style props */
   propMarginTop?: number | string;
@@ -15,10 +15,13 @@ const getStyleValue = (key: string, value: string | number | undefined) => {
   return { [key]: value === "unset" ? undefined : value };
 };
 const NameFrameContainer = ({
-  nameText,
-  emailText,
+  inputText,
+  labelText,
   propMarginTop,
 }: NameFrameContainerType) => {
+
+  const [inputField, setInputField] = useState(inputText);
+
   const nameFrameStyle = useMemo(() => {
     return {
       ...getStyleValue("marginTop", propMarginTop),
@@ -28,11 +31,19 @@ const NameFrameContainer = ({
   return (
     <View style={[styles.nameframe, nameFrameStyle]}>
       <View style={styles.namefield}>
-        <Text style={[styles.zacharyDragonheart, styles.textTypo]}>
-          {nameText}
-        </Text>
+      <Text
+          //onChange={(event) => setInputField(event.target.value)}
+          style={[styles.zacharyDragonheart, styles.textTypo]}>
+          {inputField} 
+      </Text>
+   
+
       </View>
-      <Text style={[styles.text, styles.textTypo]}>{emailText}</Text>
+
+
+      <Text style={[styles.text, styles.textTypo]}>
+        {labelText} 
+      </Text>
     </View>
   );
 };

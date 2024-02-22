@@ -6,20 +6,20 @@ import { Color, FontFamily, FontSize, Padding } from "../GlobalStyles";
 const ContentFrame = () => {
   return (
     <View style={styles.contentframe}>
-      <NameFrameContainer nameText="Zachary Dragonheart" emailText="Name:" />
+      <NameFrameContainer inputText="Zachary Dragonheart" labelText="Name:" />
       <NameFrameContainer
-        nameText="Z.Dragonheart@gmail.com"
-        emailText="E-mail:"
+        inputText="Z.Dragonheart@gmail.com"
+        labelText="E-mail:"
         propMarginTop={25}
       />
       <NameFrameContainer
-        nameText="*****"
-        emailText="Change Password:"
+        inputText="*****"
+        labelText="Change Password:"
         propMarginTop={25}
       />
       <NameFrameContainer
-        nameText="*****"
-        emailText="Re-enter password:"
+        inputText="*****"
+        labelText="Re-enter password:"
         propMarginTop={25}
       />
       <View style={[styles.submitbutton, styles.resetbuttonLayout]}>

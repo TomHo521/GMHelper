@@ -91,7 +91,8 @@ const styles = StyleSheet.create({
   youllFryFor: {
     top: 25,
     left: 30,
-    fontSize: FontSize.size_sm,
+    //fontSize: FontSize.size_sm,
+    fontSize: 16,
     fontFamily: FontFamily.milongaRegular,
     width: 257,
     height: 42,

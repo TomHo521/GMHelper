@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Text, StyleSheet, View, Pressable } from "react-native";
+import { Text, StyleSheet, View, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Color, Border, FontFamily, FontSize } from "../GlobalStyles";
 
@@ -8,23 +8,23 @@ const SubmitContainer = () => {
 
   return (
     <View style={[styles.submitframe, styles.submitFlexBox]}>
-      <Pressable
+      <TouchableOpacity
         style={[styles.submit, styles.submitBorder]}
         onPress={() => navigation.navigate("WelcomePage")}
       >
         <Text style={[styles.buttontext, styles.buttontextTypo]}>Submit</Text>
-      </Pressable>
+      </TouchableOpacity>
       <Text style={[styles.newClickHere, styles.buttonSpaceBlock]}>
         New? Click here!
       </Text>
-      <Pressable
+      <TouchableOpacity
         style={[styles.button, styles.buttonSpaceBlock]}
         onPress={() => navigation.navigate("Registration")}
       >
         <Text style={[styles.createAccount, styles.buttontextTypo]}>
           Create Account
         </Text>
-      </Pressable>
+      </TouchableOpacity>
     </View>
   );
 };

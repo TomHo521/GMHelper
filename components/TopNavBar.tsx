@@ -18,7 +18,7 @@ const TopNavBar = ({ pageTitle } : TopNavBarProps) => {
         <Image
           style={styles.backframeIcon}
           resizeMode="cover"
-          source={require("../assets/backframe2.png")}
+          source={require("../assets/backframe.png")}
         />
 
       </TouchableOpacity>

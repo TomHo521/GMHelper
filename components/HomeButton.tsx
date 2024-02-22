@@ -26,7 +26,7 @@ const HomeButton = ({ style }: HomeButtonType) => {
       <Image
         style={styles.iconHome}
         resizeMode="cover"
-        source={require("../assets/-icon-home5.png")}
+        source={require("../assets/-icon-home.png")}
       />
       <Text style={styles.home}>Home</Text>
     </Pressable>

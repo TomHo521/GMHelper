@@ -1,9 +1,7 @@
 import * as React from "react";
 import { ImageBackground, StyleSheet } from "react-native";
-import HomeContainer from "../components/HomeContainer";
 import TopNavBar from "../components/TopNavBar";
 import ContentWrapper from "../components/ContentWrapper";
-import { Padding } from "../GlobalStyles";
 
 const RegistrationIcon = () => {
   return (
@@ -13,13 +11,9 @@ const RegistrationIcon = () => {
       source={require("../assets/guildboard.png")}
     >
       <TopNavBar pageTitle="Registration"/>
-      {/* <HomeContainer
-        backFrame={require("../assets/backframe4.png")}
-        pageTitle="Registration"
-        settingsFrame={require("../assets/settingsframe3.png")}
-        homeContainerTopNavBarWidth={327}
-      /> */}
+   
       <ContentWrapper />
+
     </ImageBackground>
   );
 };

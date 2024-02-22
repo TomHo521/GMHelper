@@ -3,10 +3,10 @@ import {
   Text,
   StyleSheet,
   View,
-  Pressable,
+  TouchableOpacity,
   ImageBackground,
 } from "react-native";
-import HomeContainer from "../components/HomeContainer";
+import TopNavBar from "../components/TopNavBar";
 import { useNavigation } from "@react-navigation/native";
 import { Color, FontFamily, FontSize, Border, Padding } from "../GlobalStyles";
 
@@ -19,11 +19,8 @@ const WelcomePageIcon = () => {
       resizeMode="cover"
       source={require("../assets/welcomepage.png")}
     >
-      <HomeContainer
-        backFrame={require("../assets/backframe.png")}
-        pageTitle="Welcome"
-        settingsFrame={require("../assets/settingsframe2.png")}
-      />
+      <TopNavBar pageTitle="Welcome"/>
+    
       <View style={[styles.contentFrame, styles.contentFrameShadowBox]}>
         <View style={[styles.innercontent, styles.innercontentFlexBox]}>
           <View style={styles.annoucementFrame}>
@@ -42,12 +39,12 @@ Previously, your party last left off in Waxillium with the crude but powerful Dr
 What action awaits your party this session?`}</Text>
             </Text>
           </View>
-          <Pressable
+          <TouchableOpacity
             style={[styles.continueButton, styles.contentFrameShadowBox]}
             onPress={() => navigation.navigate("HomeScreen")}
           >
             <Text style={[styles.text1, styles.textClr]}>Continue</Text>
-          </Pressable>
+          </TouchableOpacity>
         </View>
       </View>
     </ImageBackground>

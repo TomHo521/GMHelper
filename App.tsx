@@ -18,6 +18,7 @@ import RegistrationIcon from "./screens/RegistrationIcon";
 import AbilityCheckIcon from "./screens/AbilityCheckIcon";
 import HomeScreenIcon from "./screens/HomeScreenIcon";
 import WelcomePageIcon from "./screens/WelcomePageIcon";
+import WelcomePage from "./screens/WelcomePage";
 import LoginPageIcon from "./screens/LoginPageIcon";
 import { PlayerContextProvider} from "./contexts/PlayerContext";
 
@@ -124,7 +125,7 @@ const App = () => {
               />
               <Stack.Screen
                 name="WelcomePage"
-                component={WelcomePageIcon}
+                component={WelcomePage}
                 options={{ headerShown: false }}
               />
               <Stack.Screen

@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { FlatList, StyleSheet, View, Text, ImageBackground, TouchableOpacity} from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import ContentFrameContainer from "../components/ContentFrameContainer";
-import BottomNavBarContainer from "../components/BottomNavBarContainer";
+import BottomNavBar from "../components/BottomNavBar";
 import { Color, FontSize, FontFamily, Border, Padding } from "../GlobalStyles";
 import TopNavBar from "../components/TopNavBar";
 import { PlayerContext } from "../contexts/PlayerContext";
@@ -72,14 +72,14 @@ const AbilityCheckContentFrameContainer = () => {
         <Text style={styles.label}>Ability Check</Text>
       </TouchableOpacity>
 
-      <BottomNavBarContainer
-        prop1={require("../assets/-icon-home1.png")}
+      <BottomNavBar
+        prop1={require("../assets/-icon-home.png")}
         prop2={require("../assets/iconframe.png")}
-        prop3={require("../assets/iconsaccount-circle-filled-24px2.png")}
+        prop3={require("../assets/iconsaccount-circle-filled-24px.png")}
         prop4={require("../assets/iconsmail-outline.png")}
         onHomeButtonPress={() => navigation.navigate("HomeScreen")}
         onDiceButtonPress={() => navigation.navigate("DiceRollScreen")}
-        onProfiieButtonPress={() => navigation.navigate("CharacterProfile")}
+        onProfileButtonPress={() => navigation.navigate("CharacterProfile")}
         onMessagesButtonPress={() => navigation.navigate("Messages")}
       />
     </>
@@ -178,14 +178,14 @@ export default AbilityCheckIcon;
 //     <View style={[styles.button, styles.outputBorder]}>
 //       <Text style={styles.label}>Ability Check</Text>
 //     </View>
-//     <BottomNavBarContainer
-//       prop1={require("../assets/-icon-home1.png")}
+//     <BottomNavBar
+//       prop1={require("../assets/-icon-home.png")}
 //       prop2={require("../assets/iconframe.png")}
 //       prop3={require("../assets/iconsaccount-circle-filled-24px2.png")}
 //       prop4={require("../assets/iconsmail-outline.png")}
 //       onHomeButtonPress={() => navigation.navigate("HomeScreen")}
 //       onDiceButtonPress={() => navigation.navigate("DiceRollScreen")}
-//       onProfiieButtonPress={() => navigation.navigate("CharacterProfile")}
+//       onProfileButtonPress={() => navigation.navigate("CharacterProfile")}
 //       onMessagesButtonPress={() => navigation.navigate("Messages")}
 //     />
 //   </ImageBackground>

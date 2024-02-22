@@ -2,10 +2,11 @@ import * as React from "react";
 import { Image, StyleSheet, Text, View, ImageBackground } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
-import HomeContainer from "../components/HomeContainer";
+
 import TopNavBar from "../components/TopNavBar";
-import BottomNavBarContainer from "../components/BottomNavBarContainer";
+import BottomNavBar from "../components/BottomNavBar";
 import { Color, FontFamily, FontSize, Border, Padding } from "../GlobalStyles";
+import MyPartyCarousel from "../components/MyPartyCarousel";
 
 const MyPartyIcon = () => {
   const navigation = useNavigation();
@@ -17,25 +18,17 @@ const MyPartyIcon = () => {
       source={require("../assets/myparty.png")}
     >
       <TopNavBar pageTitle="My Party"/>
-      {/* <HomeContainer
-        backFrame={require("../assets/backframe.png")}
-        pageTitle="My Party"
-        settingsFrame={require("../assets/settingsframe.png")}
-      /> */}
-      <View style={[styles.partyslide, styles.partyslideFlexBox]} />
-      <BottomNavBarContainer
+   
+      <MyPartyCarousel/>
+      <BottomNavBar
         prop1={require("../assets/-icon-home.png")}
         prop2={require("../assets/iconframe.png")}
         prop3={require("../assets/iconsaccount-circle-filled-24px.png")}
         prop4={require("../assets/iconsmail-outline.png")}
         propAlignSelf="stretch"
-        propFlex={1}
-        propFlex1={1}
-        propFlex2={1}
-        propFlex3={1}
         onHomeButtonPress={() => navigation.navigate("HomeScreen")}
         onDiceButtonPress={() => navigation.navigate("DiceRollScreen")}
-        onProfiieButtonPress={() => navigation.navigate("CharacterProfile")}
+        onProfileButtonPress={() => navigation.navigate("CharacterProfile")}
         onMessagesButtonPress={() => navigation.navigate("Messages")}
       />
     </ImageBackground>

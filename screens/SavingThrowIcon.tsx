@@ -3,7 +3,7 @@ import { ImageBackground, StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import TopNavBar from "../components/TopNavBar";
 import SavingThrowContainer from "../components/SavingThrowContainer";
-import BottomNavBarContainer from "../components/BottomNavBarContainer";
+import BottomNavBar from "../components/BottomNavBar";
 import { PlayerContext } from "../contexts/PlayerContext";
 
 const SavingThrowIcon = () => {
@@ -18,10 +18,10 @@ const SavingThrowIcon = () => {
     >
       <TopNavBar pageTitle="Saving Throw"/>
       <SavingThrowContainer />
-      <BottomNavBarContainer
-        prop1={require("../assets/-icon-home2.png")}
+      <BottomNavBar
+        prop1={require("../assets/-icon-home.png")}
         prop2={require("../assets/iconframe1.png")}
-        prop3={require("../assets/iconsaccount-circle-filled-24px3.png")}
+        prop3={require("../assets/iconsaccount-circle-filled-24px.png")}
         prop4={require("../assets/iconsmail-outline1.png")}
         propWidth1={86}
         propWidth2={86}
@@ -29,7 +29,7 @@ const SavingThrowIcon = () => {
         propWidth4={86}
         onHomeButtonPress={() => navigation.navigate("HomeScreen")}
         onDiceButtonPress={() => navigation.navigate("DiceRollScreen")}
-        onProfiieButtonPress={() => navigation.navigate("CharacterProfile")}
+        onProfileButtonPress={() => navigation.navigate("CharacterProfile")}
         onMessagesButtonPress={() => navigation.navigate("Messages")}
       />
     </ImageBackground>

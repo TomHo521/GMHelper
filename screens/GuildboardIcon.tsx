@@ -1,9 +1,9 @@
 import * as React from "react";
 import { Text, StyleSheet, View, ImageBackground } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import HomeContainer from "../components/HomeContainer";
+
 import TopNavBar from "../components/TopNavBar";
-import BottomNavBarContainer from "../components/BottomNavBarContainer";
+import BottomNavBar from "../components/BottomNavBar";
 import { FontSize, FontFamily, Color, Padding } from "../GlobalStyles";
 
 const GuildboardIcon = () => {
@@ -16,11 +16,7 @@ const GuildboardIcon = () => {
       source={require("../assets/guildboard.png")}
     >
       <TopNavBar pageTitle="GuildBoard"/>
-      {/* <HomeContainer
-        backFrame={require("../assets/backframe.png")}
-        pageTitle="Guildboard"
-        settingsFrame={require("../assets/settingsframe2.png")}
-      /> */}
+     
       <View style={[styles.contentframe, styles.questpostBorder]}>
         <View style={[styles.questpost, styles.questpostBorder]}>
           <Text style={styles.text}>
@@ -49,16 +45,16 @@ Reward:  ???
           </Text>
         </View>
       </View>
-      <BottomNavBarContainer
-        prop1={require("../assets/-icon-home3.png")}
-        prop2={require("../assets/iconframe6.png")}
-        prop3={require("../assets/iconsaccount-circle-filled-24px7.png")}
+      <BottomNavBar
+        prop1={require("../assets/-icon-home.png")}
+        prop2={require("../assets/iconframe.png")}
+        prop3={require("../assets/iconsaccount-circle-filled-24px.png")}
         prop4={require("../assets/iconsmail-outline.png")}
         propAlignSelf="unset"
         propWidth={360}
         onHomeButtonPress={() => navigation.navigate("HomeScreen")}
         onDiceButtonPress={() => navigation.navigate("DiceRollScreen")}
-        onProfiieButtonPress={() => navigation.navigate("CharacterProfile")}
+        onProfileButtonPress={() => navigation.navigate("CharacterProfile")}
         onMessagesButtonPress={() => navigation.navigate("Messages")}
       />
     </ImageBackground>

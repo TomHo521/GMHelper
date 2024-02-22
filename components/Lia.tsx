@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
   },
   frameChild: {
     top: 44,
-    left: 157,
+    left: 42,
     width: 232,
     height: 364,
     overflow: "hidden",
@@ -90,7 +90,8 @@ const styles = StyleSheet.create({
   iMayBe: {
     top: 25,
     left: 30,
-    fontSize: FontSize.size_sm,
+    //fontSize: FontSize.size_sm,
+    fontSize: 16,
     fontFamily: FontFamily.milongaRegular,
     width: 257,
     height: 42,
